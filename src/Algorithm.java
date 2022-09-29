@@ -4,6 +4,7 @@ public class Algorithm {
 
     // =============================================== //
     // Algorithm that calculates the shortest distance //
+    // =============================================== //
     static int shortestDistance(String[][] board) {
         Queue<CoordinateDistance> queue = new LinkedList<>();
         Set<String> visited = new HashSet<>();
@@ -54,6 +55,7 @@ public class Algorithm {
         }
         return -1;
     }
+    
     static boolean checkIfPossible(String board[][], int row, int col, Set<String> visited) {
         if(visited.contains(row+","+col)) return false;
         if(board[row][col].contains("[X]")) return false;
@@ -64,6 +66,7 @@ public class Algorithm {
 
     // =========================================================== //
     // Algorithm that calculates the amount of connected obstacles //
+    // =========================================================== //
     static int connectedObstacleCount(String[][] board) {
         Set<String> visited = new HashSet<>();
         int count = 0;
@@ -78,6 +81,7 @@ public class Algorithm {
         }
         return count;
     }
+    
     static void exploreObstacleIsland(String[][] board, int r, int c, Set<String> visited) {
         if(r < 0 || r >= board.length || c < 0 || c >= board[0].length) return;
         if(!board[r][c].equals("[X]")) return;
@@ -94,6 +98,7 @@ public class Algorithm {
 
     // ================================================================== //
     // Algorithm that calculates the largest group of connected obstacles //
+    // ================================================================== //
     static int largestConnectedObstacleCount(String[][] board) {
         Set<String> visited = new HashSet<>();
         int currentBiggest = 0;
@@ -108,6 +113,7 @@ public class Algorithm {
         }
         return currentBiggest;
     }
+    
     static int exploreObstacleIslandSize(String[][] board, int r, int c, Set<String> visited) {
         if(r < 0 || r >= board.length || c < 0 || c >= board[0].length) return 0;
         if(!board[r][c].equals("[X]")) return 0;
